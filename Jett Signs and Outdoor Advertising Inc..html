@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jett Signs and Outdoor Advertising Inc</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        body { margin:0; font-family:Arial, sans-serif; background:#f7f7f7; color:#222; }
+        header { background:#000; color:#fff; padding:20px; display:flex; justify-content:space-between; align-items:center; }
+        header h1 { margin:0; letter-spacing:2px; }
+        nav ul { list-style:none; margin:0; padding:0; display:flex; gap:20px; }
+        nav a { color:white; text-decoration:none; font-weight:bold; }
+        .menu-btn { display:none; font-size:24px; cursor:pointer; }
+        @media(max-width:768px){ nav ul { display:none; flex-direction:column; background:#000; padding:20px; }
+        nav ul.active { display:flex;} .menu-btn {display:block;} }
+        section { padding:60px 20px; max-width:1100px; margin:auto; }
+        h2 { text-align:center; margin-bottom:30px; }
+        .services, .products { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; }
+        .card { background:white; padding:30px; border-radius:12px; text-align:left; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s; }
+        .card:hover { transform:translateY(-5px); box-shadow:0 6px 16px rgba(0,0,0,0.2); }
+        .card i { font-size:40px; margin-bottom:15px; color:#ff8c00; display:block; }
+        .card ul { padding-left:20px; margin-top:10px; }
+        footer { background:#000; color:white; text-align:center; padding:20px; margin-top:40px; }
+
+        /* Portfolio Section Enhancements */
+        .filter-buttons { text-align:center; margin-bottom:30px; }
+        .filter-buttons button { padding:8px 15px; margin:5px; border:none; border-radius:20px; background:#ff8c00; color:#fff; cursor:pointer; transition:0.3s; }
+        .filter-buttons button:hover { background:#e67e00; }
+        .hidden { display:none; }
+
+        .portfolio-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+        .pf-item { text-align:center; transition:transform 0.3s ease, box-shadow 0.3s ease; border-radius:12px; overflow:hidden; position:relative; }
+        .pf-item img { width:100%; height:200px; object-fit:cover; border-radius:12px; transition:transform 0.3s ease; }
+        .pf-item:hover img { transform:scale(1.05); }
+        .pf-item:hover { transform:translateY(-5px); box-shadow:0 6px 16px rgba(0,0,0,0.2); }
+        .pf-title { font-weight:bold; margin-top:10px; }
+        .pf-description { font-size:14px; color:#555; margin-top:5px; }
+        .pf-category { position:absolute; top:10px; left:10px; padding:5px 12px; border-radius:15px; font-size:12px; color:#fff; font-weight:bold; cursor:pointer; transition:transform 0.2s; }
+        .pf-category:hover { transform:scale(1.1); }
+        .pf-item ul { padding-left:20px; margin-top:5px; text-align:left; }
+        .Billboard { background:#ff6b6b; }
+        .Signage { background:#4dabf7; }
+        .Transit { background:#63e6be; }
+        .Banner { background:#fcc419; }
+
+        /* Modal */
+        .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:1000; }
+        .modal-content { background:#fff; padding:20px; border-radius:12px; max-width:600px; width:90%; position:relative; }
+        .modal-content img { width:100%; border-radius:12px; margin-bottom:10px; }
+        .close-btn { position:absolute; top:10px; right:15px; font-size:20px; cursor:pointer; }
+
+        /* Contact Section Modern Design */
+        #contact { background:#fff; padding:60px 20px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); text-align:center; max-width:800px; margin:60px auto; }
+        #contact h2 { color:#ff8c00; margin-bottom:30px; }
+        .contact-info { margin:20px 0; font-size:18px; }
+        .contact-info i { margin-right:10px; color:#ff8c00; }
+        .contact-buttons { margin-top:30px; }
+        .contact-buttons a { display:inline-block; margin:10px; padding:10px 20px; background:#ff8c00; color:#fff; border-radius:25px; text-decoration:none; transition:0.3s; }
+        .contact-buttons a:hover { background:#e67e00; }
+    </style>
+   </head>
+<body>
+<header>
+     <img src="https://uploads.onecompiler.io/4472af7wd/4472aput4/logo%20final2.png" alt="jett" width="190" height="50">
+    <i class="fa-solid fa-bars menu-btn" onclick="toggleMenu()"></i>
+    <nav>
+        <ul id="menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="about">
+    <h2>About Us</h2>
+    <div class="card">
+   <p class="muted">Jett Signs and Outdoor Advertising Inc. is an established outdoor advertising organization that offers an extensive range of services to satisfy customers’ OUT-OF-HOME advertising needs, primarily through signages and various outdoor advertising media, in order to establish their image and standards in the industry.</p>
+
+ <p class="muted">We have aligned ourselves to capture the strategic window opening for functional and state-of-the-art outdoor media because we discern that information dissemination must be our utmost concern. Through time and experience, we learned that EXCELLENCE equals products delivered according to quality pursuit and concepts in our products and services, with as much sophistication in QUALITY as possible. </p>
+
+ <p class="muted">Jett Signs and Outdoor Advertising Inc. is committed to giving its very best, from management down to production and fabrication. Our operation is managed by a group of personnel with over eighteen (18) years of experience in the field, backed up by an assembly of highly skilled marketing and account executives with equal aptitude. Altogether, these congregations have produced a list of clients that includes several top-brass companies in the country.</p>
+</div>
+</section>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="card">
+            <i class="fa-solid fa-image"></i>
+            <h3>Billboards</h3>
+            <ul>
+                <li>Static Billboards</li>
+                <li>Wall mounted Billboards</li>
+                <li>LED Billboards</li>
+            </ul>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-scroll"></i>
+            <h3>Banners</h3>
+            <ul>
+                <li>Lamp Post Banners</li>
+                <li>Community Streamers</li>
+            </ul>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-sign-hanging"></i>
+            <h3>Signages</h3>
+            <ul>
+                <li>Panaflex Signage</li>
+                <li>Acrylic Build-Up Signage</li>
+                <li>Directional Signage</li>
+            </ul>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-bus"></i>
+            <h3>Transit Ads</h3>
+            <ul>
+                <li>Bus Ads</li>
+                <li>Jeeney Ads</li>
+                <li>Tricycle Ads</li>
+                 <li>Roving Truck Ads</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="products">
+    <h2>Products</h2>
+    <div class="products">
+        <div class="card">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <h3>Billboard Maintenance</h3>
+            <ul>
+                <li>Tarpaulin Installation and Dismantling</li>
+            </ul>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-plus"></i>
+            <h3>Other Services</h3>
+            <ul>
+                <li>Tarpaulin Printing</li>
+                <li>Standees</li>
+                <li>Stickers</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="filter-buttons">
+        <button onclick="filterCategory('all')">All</button>
+        <button onclick="filterCategory('Billboard')">Billboards</button>
+        <button onclick="filterCategory('Signage')">Signage</button>
+        <button onclick="filterCategory('Transit')">Transit</button>
+        <button onclick="filterCategory('Banner')">Banners</button>
+    </div>
+    <div class="portfolio-grid">
+        <div class="pf-item Billboard" data-category="Billboard" onclick="openModal(this)">
+            <div class="pf-category Billboard">Billboard</div>
+            <img src="https://uploads.onecompiler.io/4472af7wd/4472aput4/viber_image_2025-12-01_10-45-08-243.jpg">
+            <div class="pf-title">Billboard Installation – Urban Highway</div>
+            <ul>
+                <li>High visibility design</li>
+                <li>Strategic placement along highways</li>
+                <li>Custom branding for clients</li>
+            </ul>
+        </div>
+        <div class="pf-item Signage" data-category="Signage" onclick="openModal(this)">
+            <div class="pf-category Signage">Signage</div>
+            <img src="https://uploads.onecompiler.io/4472af7wd/4472aput4/viber_image_2025-12-01_10-45-08-243.jpg">
+            <div class="pf-title">LED Signage – Commercial District</div>
+            <ul>
+                <li>Bright LED displays</li>
+                <li>Durable and weatherproof</li>
+                <li>Custom messaging for businesses</li>
+            </ul>
+        </div>
+        <div class="pf-item Transit" data-category="Transit" onclick="openModal(this)">
+            <div class="pf-category Transit">Transit</div>
+            <img src="https://uploads.onecompiler.io/4472af7wd/4472aput4/viber_image_2025-12-01_10-45-08-243.jpg">
+            <div class="pf-title">Transit Ad – Bus Wrap Design</div>
+            <ul>
+                <li>Full bus wrap design</li>
+                <li>Attention-grabbing graphics</li>
+                <li>City-wide exposure</li>
+            </ul>
+        </div>
+        <div class="pf-item Banner" data-category="Banner" onclick="openModal(this)">
+            <div class="pf-category Banner">Banner</div>
+            <img src="https://uploads.onecompiler.io/4472af7wd/4472aput4/viber_image_2025-12-01_10-45-08-243.jpg">
+            <div class="pf-title">Outdoor Banner – Mall Entrance</div>
+            <ul>
+                <li>High-quality printing</li>
+                <li>Prominent placement at entrances</li>
+                <li>Seasonal and promotional content</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img id="modal-img" src="">
+        <div id="modal-title"></div>
+        <div id="modal-description"></div>
+    </div>
+</div>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info"><i class="fa-solid fa-location-dot"></i>22-E Plaridel 5, Tanzang Luma V, Imus City Cavite 4103</div>
+    <div class="contact-info"><i class="fa-solid fa-envelope"></i> jett_sign@yahoo.com | jett_signs@gmail.com | jettlayouts@gmail.com</div> 
+    <div class="contact-info"><i class="fa-solid fa-phone"></i>+63 917 819 4580</div>
+   <!-- <div class="contact-buttons">
+        <a href="mailto:info@example.com"><i class="fa-solid fa-envelope"></i> Email Us</a>
+        <a href="tel:+639123456789"><i class="fa-solid fa-phone"></i> Call Us</a>
+    </div> 
+    -->
+</section>
+
+<footer>
+    © 2025 Jett Signs and Outdoor Advertising Inc. All rights reserved.
+</footer>
+
+<script>
+function toggleMenu(){ document.getElementById("menu").classList.toggle("active"); }
+
+function filterCategory(category) {
+    const items = document.querySelectorAll('.pf-item');
+    items.forEach(item => {
+        if(category === 'all' || item.getAttribute('data-category') === category) {
+            item.classList.remove('hidden');
+        } else {
+            item.classList.add('hidden');
+        }
+    });
+}
+
+function openModal(item) {
+    const modal = document.getElementById('modal');
+    document.getElementById('modal-img').src = item.querySelector('img').src;
+    document.getElementById('modal-title').innerText = item.querySelector('.pf-title').innerText;
+    document.getElementById('modal-description').innerText = item.querySelector('.pf-description').innerText;
+    modal.style.display = 'flex';
+}
+
+function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+}
+</script>
+</body>
+</html>
